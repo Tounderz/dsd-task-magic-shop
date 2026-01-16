@@ -1,10 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "cli": {
-    "packageManager": "npm",
-    "analytics": "dc9c369e-b254-43ba-8fdf-5a53c2d4725b"
-  },
   "newProjectRoot": "projects",
   "projects": {
     "dsd-task-magic-shop": {
@@ -81,5 +77,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "6d5925db-9d63-4ec8-8acf-3c00aca1d29a"
   }
 }
