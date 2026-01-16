@@ -13,6 +13,4 @@ import {Toaster} from '../../../shared/components/ui/toaster/toaster';
   templateUrl: './home-page.html',
   styleUrl: './home-page.scss',
 })
-export class HomePage {
-
-}
+export class HomePage {}

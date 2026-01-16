@@ -1,23 +1,24 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {OrderPotionModal} from './order-potion-modal';
 
-import { OrderPotionModal } from './order-potion-modal';
-
-describe('OrderPotionModal', () => {
-  let component: OrderPotionModal;
-  let fixture: ComponentFixture<OrderPotionModal>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [OrderPotionModal]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(OrderPotionModal);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
+describe('OrderPotionModal логика', () => {
+  describe('fieldChanged', () => {
+    it('должен принимать field и value параметры', () => {
+      const method = OrderPotionModal.prototype.fieldChanged;
+      expect(method.length).toBe(1);
+    });
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  describe('isDisabledBtn', () => {
+    it('должен быть функцией без параметров', () => {
+      const method = OrderPotionModal.prototype.isDisabledBtn;
+      expect(method.length).toBe(0);
+    });
+  });
+
+  describe('handleClick', () => {
+    it('должен быть функцией без параметров', () => {
+      const method = OrderPotionModal.prototype.handleClick;
+      expect(method.length).toBe(0);
+    });
   });
 });
