@@ -1,0 +1,35 @@
+<form
+  class="order-form"
+  [formGroup]="orderForm()"
+>
+  @for (field of orderFormFields(); track $index) {
+    @switch (field.type) {
+      @case ('input') {
+        <app-input
+          [label]="field.label"
+          (valueChange)="inputValueChange($event, field.name)"
+        ></app-input>
+      }
+      @case ('select') {
+        <app-select
+          [label]="field.label"
+          [options]="getOptions(field.name)"
+          (valueChange)="selectValueChange($event, field.name)"
+        ></app-select>
+      }
+      @case ('date') {
+        <p-floatlabel variant="on">
+          <p-date-picker
+            inputId="on_label"
+            showIcon
+            iconDisplay="input"
+            size="large"
+            tabindex="-1"
+            [formControlName]="field.name"
+          />
+          <label for="on_label">{{ field.label }}</label>
+        </p-floatlabel>
+      }
+    }
+  }
+</form>

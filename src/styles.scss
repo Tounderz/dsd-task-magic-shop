@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+@import "colors";
+@import "decorations";
+@import "scrollbar";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overscroll-behavior-x: none;
+}
+
+body * {
+  font-family: Roboto, sans-serif;
+}
+
+input {
+  outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button:not(.disabled) {
+  cursor: pointer;
+}

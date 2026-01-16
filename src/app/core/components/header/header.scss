@@ -1,0 +1,50 @@
+@import "mixins";
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.project-name {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.header-links {
+  display: flex;
+  gap: 10px;
+}
+
+.header-link {
+  color: var(--color-black);
+  font-size: 18px;
+  text-decoration: none;
+  @include transition((color));
+
+  @include any-hover {
+    color: var(--color-blue);
+  }
+
+  &.active {
+    color: var(--color-blue);
+    pointer-events: none;
+  }
+}
+
+@media #{$ui-mobile} {
+  .container {
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  .project-name {
+    font-size: 18px;
+  }
+
+  .header-link {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,41 @@
+<div
+  class="input-wrapper"
+  [class.options-open]="showOptions()"
+>
+  <input
+    type="text"
+    class="input"
+    placeholder=" "
+    tabindex="-1"
+    [(ngModel)]="displayValue"
+    (ngModelChange)="handleInputChange($event)"
+    (focus)="toggleOptions()"
+    (blur)="onBlur()"
+  >
+  <span class="label">{{ label() }}</span>
+
+  @if (showOptions()) {
+    <div
+      class="select-options"
+      animate.enter="enter-animation"
+      animate.leave="leave-animation"
+    >
+      @if (getOptions().length) {
+        @for (option of getOptions(); track $index) {
+          <div
+            class="option"
+            [class.selected]="option.label === displayValue()"
+            [style.background-color]=""
+            (mousedown)="selectOption(option)"
+          >
+            {{ option.label }}
+          </div>
+        }
+      } @else {
+        <div class="option no-results">
+          Нет данных
+        </div>
+      }
+    </div>
+  }
+</div>

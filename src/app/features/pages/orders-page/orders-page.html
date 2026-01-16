@@ -1,0 +1,14 @@
+<div class="container">
+  <app-button
+    (handleBtnClick)="handleOpenOrderModal()"
+  >
+    Создать заказ
+  </app-button>
+  <app-table
+    class="app-table"
+    [tableHeaderData]="tableHeaderData"
+    [tableData]="orderTableState.orderTableState()"
+    [needDeleteColumn]="true"
+    (handleDelete)="handleDelete($event)"
+  ></app-table>
+</div>

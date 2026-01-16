@@ -1,0 +1,15 @@
+<div class="container">
+  <app-button
+    (handleBtnClick)="handleOpenPotionModal()"
+  >
+    Создать зелье
+  </app-button>
+  <app-table
+    class="app-table"
+    [tableHeaderData]="tableHeaderData"
+    [tableData]="potionTableState.potionTableState()"
+    [needDeleteColumn]="true"
+    (handleDelete)="handleDelete($event)"
+    (handleModalOpen)="handleModalOpen($event)"
+  ></app-table>
+</div>

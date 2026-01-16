@@ -1,0 +1,15 @@
+<div class="container">
+  <app-order-potion-form
+    [orderForm]="orderForm"
+    [orderFormFields]="orderFormFields"
+    (fieldChanged)="fieldChanged($event)"
+  ></app-order-potion-form>
+  <app-button
+    [variant]="'success'"
+    [fullWidth]="true"
+    [disabled]="isDisabledBtn()"
+    (handleBtnClick)="handleClick()"
+  >
+    Заказать
+  </app-button>
+</div>

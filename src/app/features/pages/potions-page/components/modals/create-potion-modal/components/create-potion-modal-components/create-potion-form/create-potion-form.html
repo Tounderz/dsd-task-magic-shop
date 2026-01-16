@@ -1,0 +1,19 @@
+<form
+  class="potion-form"
+  [formGroup]="potionForm()"
+>
+  @for (field of defaultCreatePotionFields; track $index) {
+    <app-input
+      [label]="field.label"
+      [value]="potionForm().get(field.name)?.value"
+      (valueChange)="inputValueChange($event, field.name)"
+    ></app-input>
+  }
+  @for (ingredient of ingredients; track $index) {
+    <app-input
+      [label]="ingredient.name"
+      [inputType]="'number'"
+      (valueChange)="inputValueChange($event, ingredient.id)"
+    ></app-input>
+  }
+</form>

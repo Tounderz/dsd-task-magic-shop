@@ -1,0 +1,9 @@
+@if (toasterState.toastState()) {
+  <div
+    class="toast"
+    [class]="toasterState.toastState()?.type"
+    [class.exiting]="!toasterState.toastState()"
+  >
+    {{ toasterState.toastState()?.message }}
+  </div>
+}

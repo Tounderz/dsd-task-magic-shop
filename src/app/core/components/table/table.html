@@ -1,0 +1,69 @@
+<div class="container">
+  <p-table
+    sortField="id"
+    showGridlines
+    [value]="safeTableData()"
+    [resizableColumns]="true"
+    columnResizeMode="expand"
+    [sortOrder]="-1"
+  >
+    <ng-template #header>
+      <tr>
+        @for (column of tableHeaderData(); track $index) {
+          @if (column.sortable) {
+            <th
+              pResizableColumn
+              [width]="column.key === 'id' ? '150px' : 'unset'"
+              [pSortableColumn]="column.key"
+            >
+              <div class="header-column">
+                {{ column.value }}
+                <p-sortIcon [field]="column.key" />
+              </div>
+            </th>
+          } @else {
+            <th pResizableColumn>
+              <div class="header-column">
+                {{ column.value }}
+              </div>
+            </th>
+          }
+        }
+        @if (needDeleteColumn()) {
+          <th pResizableColumn>Удалить</th>
+        }
+      </tr>
+    </ng-template>
+    <ng-template #body let-rowData>
+      <tr>
+        @for (column of tableHeaderData(); track $index) {
+          @switch (column.type) {
+            @case ('color') {
+              <td
+                class="body-column"
+                [style.background-color]="rowData[column.key]"
+              ></td>
+            }
+            @case ('modal') {
+              <td class="table-action body-column">
+                <app-button (handleBtnClick)="handleModalOpenClick(rowData.id)">
+                  <i class="pi pi-box"></i>
+                </app-button>
+              </td>
+            }
+            @default {
+              <td class="body-column">{{ rowData[column.key] }}</td>
+            }
+          }
+        }
+        @if (needDeleteColumn()) {
+          <td class="table-action body-column">
+            <app-button (handleBtnClick)="handleDeleteClick(rowData.id)">
+              <i class="pi pi-trash"></i>
+            </app-button>
+          </td>
+        }
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

@@ -1,0 +1,9 @@
+@import "mixins";
+
+.container {
+  @include table-page-container;
+}
+
+.app-table {
+  @include app-table;
+}

@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="project-name">Лавка мага</div>
+  <div class="header-links">
+    @for (link of headerLinks; track $index) {
+      <a
+        class="header-link"
+        [routerLink]="[link.path]"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: link.exact || false }"
+        [ariaCurrentWhenActive]="'page'"
+      >
+        {{ link.label }}
+      </a>
+    }
+  </div>
+</div>

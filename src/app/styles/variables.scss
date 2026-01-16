@@ -1,0 +1,21 @@
+$ui-index-1: 1; // using for elements that should overlap elements in standard flow
+$ui-index-2: 2; // using for elements that should overlap elements in standard flow
+$ui-index-3: 3; // using for elements that should overlap elements in standard flow
+$ui-index-4: 4; // using for sidebar and header
+$ui-index-5: 5; // using for modals and dropdowns
+$ui-index-6: 6; // overlaps everything
+
+// breakpoints
+$xxl: 1400px;
+$xl: 1200px;
+$lg: 1024px;
+$md: 768px;
+$sm: 576px;
+$xs: 0;
+
+$ui-mobile: 'screen and (width < #{$sm})';
+$ui-tablet-portrait: 'screen and (#{$sm} < width <= #{$md})';
+$ui-tablet-landscape: 'screen and (#{$md} < width <= #{$lg})';
+$ui-notebook: 'screen and (#{$lg} < width <= #{$xl})';
+$ui-pc: 'screen and (#{$xl} < width <= #{$xxl})';
+$ui-pc-large: 'screen and (#{$xxl} < width)';

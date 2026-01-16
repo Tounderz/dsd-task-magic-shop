@@ -1,0 +1,50 @@
+@import "variables";
+
+@mixin table-page-container() {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  @media #{$ui-mobile} {
+    gap: 10px;
+  }
+}
+
+@mixin app-table() {
+  height: calc(100vh - 211px);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+
+  @media #{$ui-mobile} {
+    height: calc(100vh - 117px);
+  }
+}
+
+@mixin any-hover() {
+  @media (any-hover: hover) {
+    &:hover:not(:disabled):not(.btn-disabled) {
+      @content;
+    }
+  }
+}
+
+@mixin transition($properties: all, $time: .2s, $function: ease-in-out) {
+  @if type-of($properties) == 'list' {
+    $transition-list: ();
+    @each $property in $properties {
+      $transition-list: append($transition-list, #{$property} $time $function, comma);
+    }
+    transition: $transition-list;
+  } @else {
+    transition: $properties $time $function;
+  }
+}
+
+@mixin text-ellipsis($max-width: 350px) {
+  max-width: $max-width;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

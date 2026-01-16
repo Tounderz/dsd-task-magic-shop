@@ -1,0 +1,31 @@
+@import "variables";
+
+.container {
+  display: flex;
+}
+
+.p-datatable-sortable-column {
+  padding: 5px;
+}
+
+.header-column {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.table-action {
+  display: flex;
+  justify-content: center;
+}
+
+@media #{$ui-mobile} {
+  .header-column,
+  .body-column {
+    font-size: 14px;
+  }
+
+  .body-column {
+    --p-datatable-body-cell-padding: 5px;
+  }
+}

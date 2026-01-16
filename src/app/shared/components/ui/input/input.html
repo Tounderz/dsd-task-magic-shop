@@ -1,0 +1,11 @@
+<div class="input-wrapper">
+  <input
+    class="input"
+    placeholder=" "
+    tabindex="-1"
+    [value]="value()"
+    [type]="inputType()"
+    (blur)="handleChange($event)"
+  >
+  <span class="label">{{ label() }}</span>
+</div>
